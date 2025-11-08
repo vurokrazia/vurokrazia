@@ -47,3 +47,4 @@ I'm a full stack developer from Mexico, working professionally with backend and 
 
 - [STL Manager Backend](https://github.com/vurokrazia/stl-manager-backend) - Go REST API for managing 3D print files with PostgreSQL, batch operations optimization, and OpenAI integration
 - [STL Manager Frontend](https://github.com/vurokrazia/stl-manager-frontend) - TypeScript frontend for browsing and organizing 3D models
+- [Printonomics](https://github.com/vurokrazia/printonomics) - Cost calculator and project management tool for 3D printing (WIP)
