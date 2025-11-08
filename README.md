@@ -1,15 +1,14 @@
 # Hi 👋 My name is Jesus Martinez
 
-## Full Stack Developer | 3D Printing Enthusiast
+## Software Engineer | 3D Printing Enthusiast
 
-I'm a full stack developer from Mexico, working professionally with backend and frontend technologies. In my free time, I merge my passion for programming with 3D printing as a hobby.
+I'm a software engineer from Mexico who bridges the gap between code and creation. Passionate about building scalable backend systems and integrating technology with 3D printing workflows.
 
 * 🌍  Based in Mexico
-* 💼  Working as Full Stack Developer (Backend & Frontend)
-* 🧠  Professional stack: Go, TypeScript, PostgreSQL, Angular, React, Node.js
-* 🖥️  Hobby project: STL Manager - a full-stack 3D model management system
-* 🤝  Open to collaborating on backend systems, frontend apps, or full-stack projects
-* ⚡  Fun fact: As a hobby, I combine programming with 3D printing to automate my print workflow
+* 🖥️  Building STL Manager - a full-stack 3D model management system
+* 🧠  Currently working with Go, TypeScript, PostgreSQL, and REST APIs
+* 🤝  Open to collaborating on projects involving backend systems, 3D printing automation, or full-stack development
+* ⚡  Fun fact: I merge programming with 3D printing - from model management APIs to automated workflows
 
 ### Skills
 
@@ -47,4 +46,4 @@ I'm a full stack developer from Mexico, working professionally with backend and 
 
 - [STL Manager Backend](https://github.com/vurokrazia/stl-manager-backend) - Go REST API for managing 3D print files with PostgreSQL, batch operations optimization, and OpenAI integration
 - [STL Manager Frontend](https://github.com/vurokrazia/stl-manager-frontend) - TypeScript frontend for browsing and organizing 3D models
-- [Printonomics](https://github.com/vurokrazia/printonomics) - Cost calculator and project management tool for 3D printing (WIP)
+- [Control Platform](https://github.com/vurokrazia/control-platform) - TypeScript platform for control and management (in active development)
