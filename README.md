@@ -1,14 +1,15 @@
 # Hi 👋 My name is Jesus Martinez
 
-## Software Engineer | 3D Printing Enthusiast
+## Full Stack Developer | 3D Printing Enthusiast
 
-I'm a software engineer from Mexico who bridges the gap between code and creation. Passionate about building scalable backend systems and integrating technology with 3D printing workflows.
+I'm a full stack developer from Mexico, working professionally with backend and frontend technologies. In my free time, I merge my passion for programming with 3D printing as a hobby.
 
 * 🌍  Based in Mexico
-* 🖥️  Building STL Manager - a full-stack 3D model management system
-* 🧠  Currently working with Go, TypeScript, PostgreSQL, and REST APIs
-* 🤝  Open to collaborating on projects involving backend systems, 3D printing automation, or full-stack development
-* ⚡  Fun fact: I merge programming with 3D printing - from model management APIs to automated workflows
+* 💼  Working as Full Stack Developer (Backend & Frontend)
+* 🧠  Professional stack: Go, TypeScript, PostgreSQL, Angular, React, Node.js
+* 🖥️  Hobby project: STL Manager - a full-stack 3D model management system
+* 🤝  Open to collaborating on backend systems, frontend apps, or full-stack projects
+* ⚡  Fun fact: As a hobby, I combine programming with 3D printing to automate my print workflow
 
 ### Skills
 
