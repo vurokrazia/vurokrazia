@@ -67,7 +67,16 @@ def crear_presentacion():
     # SLIDES 51-58: Errores a Evitar
     crear_slides_errores_evitar(prs)
 
-    # SLIDE 59: Gracias
+    # SLIDES 59-62: Recursos y Comunidad
+    crear_slides_recursos_comunidad(prs)
+
+    # SLIDES 63-65: Próximos Pasos
+    crear_slides_proximos_pasos(prs)
+
+    # SLIDES 66-70: Mensaje Final
+    crear_slides_mensaje_final(prs)
+
+    # SLIDE 71: Gracias (final)
     crear_slide_gracias(prs)
 
     # Guardar presentación
@@ -2146,8 +2155,515 @@ def crear_slide_error_comunidad(prs):
         y_pos += 0.6
 
 
+def crear_slides_recursos_comunidad(prs):
+    """Crea los slides de Recursos y Comunidad"""
+    crear_slide_separador_recursos(prs)  # 59
+    crear_slide_comunidades(prs)  # 60
+    crear_slide_youtube(prs)  # 61
+    crear_slide_software_adicional(prs)  # 62
+
+
+def crear_slide_separador_recursos(prs):
+    """Slide 59: Separador Recursos"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(2.8), Inches(8), Inches(1.2))
+    tf = titulo.text_frame
+    tf.text = "📚 Recursos y Comunidad"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(52)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+
+def crear_slide_comunidades(prs):
+    """Slide 60: Comunidades"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(0.8), Inches(8), Inches(0.7))
+    tf = titulo.text_frame
+    tf.text = "🌐 Comunidades"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    # Facebook
+    label1 = slide.shapes.add_textbox(Inches(1.5), Inches(2), Inches(7), Inches(0.4))
+    tf = label1.text_frame
+    tf.text = "Facebook (Español)"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(28)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+
+    facebook_items = [
+        "• Impresión 3D México",
+        "• Impresión 3D Argentina",
+        "• Impresión 3D España"
+    ]
+    y_pos = 2.5
+    for item in facebook_items:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.4))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(22)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.5
+
+    # Reddit
+    label2 = slide.shapes.add_textbox(Inches(1.5), Inches(4.5), Inches(7), Inches(0.4))
+    tf = label2.text_frame
+    tf.text = "Reddit (Inglés)"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(28)
+    p.font.bold = True
+    p.font.color.rgb = RGBColor(255, 69, 0)  # Naranja Reddit
+
+    reddit_items = [
+        "• r/3Dprinting",
+        "• r/ender3",
+        "• r/BambuLab"
+    ]
+    y_pos = 5.0
+    for item in reddit_items:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.4))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(22)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.5
+
+
+def crear_slide_youtube(prs):
+    """Slide 61: Canales de YouTube"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(0.8), Inches(8), Inches(0.7))
+    tf = titulo.text_frame
+    tf.text = "🎥 Canales de YouTube"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    # Español
+    label1 = slide.shapes.add_textbox(Inches(1.5), Inches(2), Inches(7), Inches(0.4))
+    tf = label1.text_frame
+    tf.text = "Español"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(28)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+
+    espanol_items = [
+        "• Vurokrazia3D (@vurokrazia)",
+        "• Impresiones 3D",
+        "• Varios tutoriales de Tinkercad"
+    ]
+    y_pos = 2.5
+    for item in espanol_items:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.4))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(22)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.5
+
+    # Inglés
+    label2 = slide.shapes.add_textbox(Inches(1.5), Inches(4.5), Inches(7), Inches(0.4))
+    tf = label2.text_frame
+    tf.text = "Inglés (subtítulos)"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(28)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_SECUNDARIO
+
+    ingles_items = [
+        "• Teaching Tech",
+        "• Maker's Muse",
+        "• 3D Printing Nerd"
+    ]
+    y_pos = 5.0
+    for item in ingles_items:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.4))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(22)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.5
+
+
+def crear_slide_software_adicional(prs):
+    """Slide 62: Software Adicional"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(0.8), Inches(8), Inches(0.7))
+    tf = titulo.text_frame
+    tf.text = "🛠️ Software Adicional"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    # Diseño 3D
+    label1 = slide.shapes.add_textbox(Inches(1.5), Inches(2), Inches(7), Inches(0.4))
+    tf = label1.text_frame
+    tf.text = "Diseño 3D Básico"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(26)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+
+    diseno_items = [
+        "• Tinkercad (gratuito, navegador) - ¡Super fácil!",
+        "• Fusion 360 (gratuito hobby) - Profesional",
+        "• Blender (gratuito) - Orgánico"
+    ]
+    y_pos = 2.5
+    for item in diseno_items:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.5))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(20)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.6
+
+    # Reparación
+    label2 = slide.shapes.add_textbox(Inches(1.5), Inches(5.2), Inches(7), Inches(0.4))
+    tf = label2.text_frame
+    tf.text = "Reparación"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(26)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+
+    bullet = slide.shapes.add_textbox(Inches(2), Inches(5.7), Inches(6), Inches(0.4))
+    tf = bullet.text_frame
+    tf.text = "• Meshmixer - Arregla STL"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(20)
+    p.font.color.rgb = COLOR_TEXTO
+
+
+def crear_slides_proximos_pasos(prs):
+    """Crea los slides de Próximos Pasos"""
+    crear_slide_separador_proximos(prs)  # 63
+    crear_slide_mes1(prs)  # 64
+    crear_slide_mes2_3(prs)  # 65
+    crear_slide_mes4plus(prs)  # 66 (ajustado)
+
+
+def crear_slide_separador_proximos(prs):
+    """Slide 63: Separador Próximos Pasos"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(2.8), Inches(8), Inches(1.2))
+    tf = titulo.text_frame
+    tf.text = "🎓 Tu Camino en la Impresión 3D"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(48)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+
+def crear_slide_mes1(prs):
+    """Slide 64: Mes 1"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(1.2), Inches(8), Inches(0.7))
+    tf = titulo.text_frame
+    tf.text = "📅 Mes 1"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    subtitulo = slide.shapes.add_textbox(Inches(1), Inches(2), Inches(8), Inches(0.5))
+    tf = subtitulo.text_frame
+    tf.text = "Domina PLA"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(32)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+    p.alignment = PP_ALIGN.CENTER
+
+    items = [
+        "• Imprime 10+ piezas diferentes",
+        "• Aprende a nivelar",
+        "• Experimenta con configuraciones básicas"
+    ]
+    y_pos = 3.2
+    for item in items:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.6))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(26)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.9
+
+
+def crear_slide_mes2_3(prs):
+    """Slide 65: Mes 2-3"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(1.2), Inches(8), Inches(0.7))
+    tf = titulo.text_frame
+    tf.text = "📅 Mes 2-3"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    subtitulo = slide.shapes.add_textbox(Inches(1), Inches(2), Inches(8), Inches(0.5))
+    tf = subtitulo.text_frame
+    tf.text = "Expande tus horizontes"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(32)
+    p.font.bold = True
+    p.font.color.rgb = RGBColor(234, 179, 8)
+    p.alignment = PP_ALIGN.CENTER
+
+    items = [
+        "• Prueba PETG",
+        "• Aprende diseño básico (Tinkercad)",
+        "• Experimenta con post-procesado (lijado, pintura)"
+    ]
+    y_pos = 3.2
+    for item in items:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.6))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(26)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.9
+
+
+def crear_slide_mes4plus(prs):
+    """Slide 66: Mes 4+"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(1.2), Inches(8), Inches(0.7))
+    tf = titulo.text_frame
+    tf.text = "📅 Mes 4+"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    subtitulo = slide.shapes.add_textbox(Inches(1), Inches(2), Inches(8), Inches(0.5))
+    tf = subtitulo.text_frame
+    tf.text = "Proyectos avanzados"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(32)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_ROJO
+    p.alignment = PP_ALIGN.CENTER
+
+    items = [
+        "• Integra con Arduino/ESP32",
+        "• Piezas funcionales complejas",
+        "• Comparte tus creaciones con la comunidad"
+    ]
+    y_pos = 3.2
+    for item in items:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.6))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(26)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.9
+
+
+def crear_slides_mensaje_final(prs):
+    """Crea los slides de Mensaje Final"""
+    crear_slide_mensaje1(prs)  # 67
+    crear_slide_mensaje2(prs)  # 68
+    crear_slide_bienvenido(prs)  # 69
+    crear_slide_contacto(prs)  # 70
+
+
+def crear_slide_mensaje1(prs):
+    """Slide 67: Mensaje Final 1"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(2), Inches(8), Inches(0.8))
+    tf = titulo.text_frame
+    tf.text = "✨ Mensaje Final"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(52)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    mensaje = slide.shapes.add_textbox(Inches(1), Inches(3.5), Inches(8), Inches(1))
+    tf = mensaje.text_frame
+    tf.text = "La impresión 3D es un VIAJE,\nno un destino"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(36)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TEXTO
+    p.alignment = PP_ALIGN.CENTER
+
+
+def crear_slide_mensaje2(prs):
+    """Slide 68: Todos comenzamos con..."""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(1.5), Inches(8), Inches(0.7))
+    tf = titulo.text_frame
+    tf.text = "Todos comenzamos con:"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(36)
+    p.font.color.rgb = COLOR_TEXTO
+    p.alignment = PP_ALIGN.CENTER
+
+    items = [
+        "❌ Impresiones fallidas",
+        "😤 Frustraciones",
+        "❓ Muchas preguntas"
+    ]
+    y_pos = 2.8
+    for item in items:
+        bullet = slide.shapes.add_textbox(Inches(2.5), Inches(y_pos), Inches(5), Inches(0.6))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(32)
+        p.font.color.rgb = COLOR_TEXTO
+        p.alignment = PP_ALIGN.CENTER
+        y_pos += 0.9
+
+    # Lo importante
+    importante = slide.shapes.add_textbox(Inches(1), Inches(5.5), Inches(8), Inches(0.6))
+    tf = importante.text_frame
+    tf.text = "Lo importante es:"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(28)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+    p.alignment = PP_ALIGN.CENTER
+
+
+def crear_slide_bienvenido(prs):
+    """Slide 69: Bienvenido"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    items = [
+        "✅ Ser paciente",
+        "✅ Aprender de los errores",
+        "✅ Disfrutar el proceso",
+        "✅ Compartir con la comunidad"
+    ]
+    y_pos = 1.5
+    for item in items:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.6))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(28)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.8
+
+    # Mensaje final
+    mensaje = slide.shapes.add_textbox(Inches(1), Inches(4.5), Inches(8), Inches(1.5))
+    tf = mensaje.text_frame
+    tf.text = "🚀 ¡Bienvenido al mundo de la\nimpresión 3D!"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+    p.alignment = PP_ALIGN.CENTER
+
+
+def crear_slide_contacto(prs):
+    """Slide 70: Contacto y Recuerda"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(0.7), Inches(8), Inches(0.6))
+    tf = titulo.text_frame
+    tf.text = "📧 Contacto"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(36)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    # Contactos
+    contactos = [
+        "Twitter/X: @vurokrazia",
+        "YouTube: Vurokrazia3D",
+        "Comunidades: Impresión 3D México (Facebook)"
+    ]
+    y_pos = 1.5
+    for contacto in contactos:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.4))
+        tf = bullet.text_frame
+        tf.text = contacto
+        p = tf.paragraphs[0]
+        p.font.size = Pt(20)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.5
+
+    # Recuerda
+    recuerda_titulo = slide.shapes.add_textbox(Inches(1), Inches(3.5), Inches(8), Inches(0.5))
+    tf = recuerda_titulo.text_frame
+    tf.text = "🎯 Recuerda:"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(32)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+    p.alignment = PP_ALIGN.CENTER
+
+    recuerda_items = [
+        "• Empieza con PLA",
+        "• Presupuesto mínimo $5,500 MXN",
+        "• Nivela la cama siempre",
+        "• Únete a la comunidad",
+        "• Sé paciente y disfruta"
+    ]
+    y_pos = 4.2
+    for item in recuerda_items:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.4))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(20)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.5
+
+
 def crear_slide_gracias(prs):
-    """Slide 59: Gracias"""
+    """Slide 71: Gracias"""
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     crear_fondo(slide)
 
