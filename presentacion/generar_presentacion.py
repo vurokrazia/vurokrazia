@@ -61,7 +61,10 @@ def crear_presentacion():
     # SLIDES 41-44: Software
     crear_slides_software(prs)
 
-    # SLIDE 45: Gracias
+    # SLIDES 45-50: Primeros Pasos
+    crear_slides_primeros_pasos(prs)
+
+    # SLIDE 51: Gracias
     crear_slide_gracias(prs)
 
     # Guardar presentación
@@ -1606,8 +1609,312 @@ def crear_slide_config_recomendada(prs):
         y_pos += 0.5
 
 
+def crear_slides_primeros_pasos(prs):
+    """Crea los slides de Primeros Pasos"""
+    # Slide 45: Separador
+    crear_slide_separador_primeros_pasos(prs)
+
+    # Slide 46: Paso 1 - Calibración
+    crear_slide_paso1_calibracion(prs)
+
+    # Slide 47: Paso 2 - Tu Primera Pieza
+    crear_slide_paso2_primera_pieza(prs)
+
+    # Slide 48: Paso 3 - Prepárate
+    crear_slide_paso3_preparate(prs)
+
+    # Slide 49: Paso 4 - Observa
+    crear_slide_paso4_observa(prs)
+
+    # Slide 50: Paso 5 - Paciencia
+    crear_slide_paso5_paciencia(prs)
+
+
+def crear_slide_separador_primeros_pasos(prs):
+    """Slide 45: Separador Primeros Pasos"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título principal
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(2.8), Inches(8), Inches(1.2))
+    tf = titulo.text_frame
+    tf.text = "🚀 Tu Primera Impresión"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(52)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+
+def crear_slide_paso1_calibracion(prs):
+    """Slide 46: Paso 1 - Calibración"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(0.7), Inches(8), Inches(0.7))
+    tf = titulo.text_frame
+    tf.text = "🎯 Paso 1: Calibración"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    # Subtítulo
+    subtitulo = slide.shapes.add_textbox(Inches(1), Inches(1.5), Inches(8), Inches(0.5))
+    tf = subtitulo.text_frame
+    tf.text = "Nivelación de la cama"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(26)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+    p.alignment = PP_ALIGN.CENTER
+
+    # Automática
+    auto_label = slide.shapes.add_textbox(Inches(1.5), Inches(2.3), Inches(7), Inches(0.4))
+    tf = auto_label.text_frame
+    tf.text = "Automática:"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(24)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+
+    auto_items = ["• Ejecuta desde el menú", "• ¡Listo!"]
+    y_pos = 2.8
+    for item in auto_items:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.4))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(22)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.5
+
+    # Manual
+    manual_label = slide.shapes.add_textbox(Inches(1.5), Inches(4), Inches(7), Inches(0.4))
+    tf = manual_label.text_frame
+    tf.text = "Manual:"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(24)
+    p.font.bold = True
+    p.font.color.rgb = RGBColor(234, 179, 8)  # Amarillo
+
+    manual_items = [
+        "• Papel entre boquilla y cama",
+        "• Ajusta hasta que roce ligeramente",
+        "• Repite en las 4 esquinas"
+    ]
+    y_pos = 4.5
+    for item in manual_items:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.4))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(22)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.5
+
+    # Mensaje importante
+    mensaje = slide.shapes.add_textbox(Inches(1), Inches(6.3), Inches(8), Inches(0.6))
+    tf = mensaje.text_frame
+    tf.text = "✅ La primera capa es la BASE de todo"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(24)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+    p.alignment = PP_ALIGN.CENTER
+
+
+def crear_slide_paso2_primera_pieza(prs):
+    """Slide 47: Paso 2 - Tu Primera Pieza"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(1), Inches(8), Inches(0.7))
+    tf = titulo.text_frame
+    tf.text = "📝 Paso 2: Tu Primera Pieza"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    # Subtítulo
+    subtitulo = slide.shapes.add_textbox(Inches(1), Inches(2), Inches(8), Inches(0.6))
+    tf = subtitulo.text_frame
+    tf.text = "Elige algo SIMPLE"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(32)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+    p.alignment = PP_ALIGN.CENTER
+
+    # Características
+    label = slide.shapes.add_textbox(Inches(1.5), Inches(3), Inches(7), Inches(0.4))
+    tf = label.text_frame
+    tf.text = "Características:"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(24)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TEXTO
+
+    caracteristicas = [
+        "• Sin voladizos complicados",
+        "• Tamaño pequeño (menos de 2 horas)",
+        "• Ejemplos: cubo de calibración, llavero"
+    ]
+    y_pos = 3.5
+    for caract in caracteristicas:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.5))
+        tf = bullet.text_frame
+        tf.text = caract
+        p = tf.paragraphs[0]
+        p.font.size = Pt(24)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.7
+
+
+def crear_slide_paso3_preparate(prs):
+    """Slide 48: Paso 3 - Prepárate"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(1.2), Inches(8), Inches(0.7))
+    tf = titulo.text_frame
+    tf.text = "🏁 Paso 3: Prepárate"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    # Lista de preparación
+    items = [
+        "✅ Filamento PLA cargado",
+        "✅ Cama limpia (alcohol isopropílico)",
+        "✅ Tarjeta SD lista",
+        "✅ Configura en Cura (perfil PLA básico)"
+    ]
+
+    y_pos = 2.8
+    for item in items:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.5))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(26)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.9
+
+
+def crear_slide_paso4_observa(prs):
+    """Slide 49: Paso 4 - Observa"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(0.8), Inches(8), Inches(0.7))
+    tf = titulo.text_frame
+    tf.text = "👀 Paso 4: Observa"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    # Subtítulo
+    subtitulo = slide.shapes.add_textbox(Inches(1), Inches(1.6), Inches(8), Inches(0.6))
+    tf = subtitulo.text_frame
+    tf.text = "Los primeros 5 minutos son críticos"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(28)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_ROJO
+    p.alignment = PP_ALIGN.CENTER
+
+    # Verifica
+    label = slide.shapes.add_textbox(Inches(1.5), Inches(2.5), Inches(7), Inches(0.4))
+    tf = label.text_frame
+    tf.text = "Verifica:"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(24)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+
+    items = [
+        "• Primera capa se adhiere bien",
+        "• Líneas uniformes",
+        "• Sin levantamientos"
+    ]
+    y_pos = 3.0
+    for item in items:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.5))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(24)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.7
+
+    # Mensaje
+    mensaje = slide.shapes.add_textbox(Inches(1), Inches(5.5), Inches(8), Inches(0.8))
+    tf = mensaje.text_frame
+    tf.text = "Si hay problemas: PAUSA y ajusta"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(26)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_ROJO
+    p.alignment = PP_ALIGN.CENTER
+
+
+def crear_slide_paso5_paciencia(prs):
+    """Slide 50: Paso 5 - Paciencia"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(1.2), Inches(8), Inches(0.7))
+    tf = titulo.text_frame
+    tf.text = "⏳ Paso 5: Paciencia"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    # Subtítulo
+    subtitulo = slide.shapes.add_textbox(Inches(1), Inches(2), Inches(8), Inches(0.5))
+    tf = subtitulo.text_frame
+    tf.text = "Deja que termine"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(28)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+    p.alignment = PP_ALIGN.CENTER
+
+    # Consejos
+    items = [
+        "• No abras puertas (corrientes de aire)",
+        "• No muevas la impresora",
+        "• Espera que la cama se enfríe antes de retirar"
+    ]
+
+    y_pos = 3.2
+    for item in items:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.6))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(24)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.9
+
+
 def crear_slide_gracias(prs):
-    """Slide 45: Gracias"""
+    """Slide 51: Gracias"""
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     crear_fondo(slide)
 
