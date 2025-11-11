@@ -55,7 +55,10 @@ def crear_presentacion():
     # SLIDES 31-35: Repositorios
     crear_slides_repositorios(prs)
 
-    # SLIDE 36: Gracias
+    # SLIDES 36-40: Eligiendo Impresora
+    crear_slides_eligiendo_impresora(prs)
+
+    # SLIDE 41: Gracias
     crear_slide_gracias(prs)
 
     # Guardar presentación
@@ -1108,8 +1111,312 @@ def crear_slide_empezar_hoy(prs):
     p.alignment = PP_ALIGN.CENTER
 
 
+def crear_slides_eligiendo_impresora(prs):
+    """Crea los slides de Eligiendo Impresora"""
+    # Slide 36: Separador
+    crear_slide_separador_impresora(prs)
+
+    # Slide 37: Gama Entrada
+    crear_slide_gama_entrada(prs)
+
+    # Slide 38: Gama Media
+    crear_slide_gama_media(prs)
+
+    # Slide 39: Gama Alta
+    crear_slide_gama_alta(prs)
+
+    # Slide 40: Recomendación
+    crear_slide_recomendacion_impresora(prs)
+
+
+def crear_slide_separador_impresora(prs):
+    """Slide 36: Separador Eligiendo Impresora"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título principal
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(2.8), Inches(8), Inches(1.2))
+    tf = titulo.text_frame
+    tf.text = "📦 Eligiendo tu Primera Impresora"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(48)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+
+def crear_slide_gama_entrada(prs):
+    """Slide 37: Gama Entrada"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(0.8), Inches(8), Inches(0.6))
+    tf = titulo.text_frame
+    tf.text = "🟢 Gama Entrada"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+    p.alignment = PP_ALIGN.CENTER
+
+    # Precio
+    precio = slide.shapes.add_textbox(Inches(1), Inches(1.5), Inches(8), Inches(0.5))
+    tf = precio.text_frame
+    tf.text = "$3,500 - $5,500 MXN ($200-$300 USD)"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(26)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TEXTO
+    p.alignment = PP_ALIGN.CENTER
+
+    # Lo que obtienes
+    label1 = slide.shapes.add_textbox(Inches(1.5), Inches(2.3), Inches(7), Inches(0.4))
+    tf = label1.text_frame
+    tf.text = "Lo que obtienes:"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(24)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+
+    caracteristicas = [
+        "• Solo PLA",
+        "• Nivelación manual/semiautomática",
+        "• Velocidades moderadas"
+    ]
+
+    y_pos = 2.8
+    for caract in caracteristicas:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.4))
+        tf = bullet.text_frame
+        tf.text = caract
+        p = tf.paragraphs[0]
+        p.font.size = Pt(22)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.5
+
+    # Ideal para
+    label2 = slide.shapes.add_textbox(Inches(1.5), Inches(4.8), Inches(7), Inches(0.4))
+    tf = label2.text_frame
+    tf.text = "Ideal para:"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(24)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+
+    ideal = [
+        "• Principiantes absolutos",
+        "• Figuras decorativas"
+    ]
+
+    y_pos = 5.3
+    for item in ideal:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.4))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(22)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.5
+
+
+def crear_slide_gama_media(prs):
+    """Slide 38: Gama Media"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(0.8), Inches(8), Inches(0.6))
+    tf = titulo.text_frame
+    tf.text = "🟡 Gama Media"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = RGBColor(234, 179, 8)  # Amarillo
+    p.alignment = PP_ALIGN.CENTER
+
+    # Precio
+    precio = slide.shapes.add_textbox(Inches(1), Inches(1.5), Inches(8), Inches(0.5))
+    tf = precio.text_frame
+    tf.text = "$9,000 - $18,000 MXN ($500-$1000 USD)"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(26)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TEXTO
+    p.alignment = PP_ALIGN.CENTER
+
+    # Lo que obtienes
+    label1 = slide.shapes.add_textbox(Inches(1.5), Inches(2.3), Inches(7), Inches(0.4))
+    tf = label1.text_frame
+    tf.text = "Lo que obtienes:"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(24)
+    p.font.bold = True
+    p.font.color.rgb = RGBColor(234, 179, 8)
+
+    caracteristicas = [
+        "• PLA, PETG, ABS",
+        "• Nivelación automática",
+        "• Velocidades más rápidas",
+        "• Mejor calidad"
+    ]
+
+    y_pos = 2.8
+    for caract in caracteristicas:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.4))
+        tf = bullet.text_frame
+        tf.text = caract
+        p = tf.paragraphs[0]
+        p.font.size = Pt(22)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.5
+
+    # Ideal para
+    label2 = slide.shapes.add_textbox(Inches(1.5), Inches(5), Inches(7), Inches(0.4))
+    tf = label2.text_frame
+    tf.text = "Ideal para:"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(24)
+    p.font.bold = True
+    p.font.color.rgb = RGBColor(234, 179, 8)
+
+    ideal = [
+        "• Piezas funcionales",
+        "• Prototipos de calidad"
+    ]
+
+    y_pos = 5.5
+    for item in ideal:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.4))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(22)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.5
+
+
+def crear_slide_gama_alta(prs):
+    """Slide 39: Gama Alta"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(0.8), Inches(8), Inches(0.6))
+    tf = titulo.text_frame
+    tf.text = "🔴 Gama Alta"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_ROJO
+    p.alignment = PP_ALIGN.CENTER
+
+    # Precio
+    precio = slide.shapes.add_textbox(Inches(1), Inches(1.5), Inches(8), Inches(0.5))
+    tf = precio.text_frame
+    tf.text = "$18,000+ MXN ($1000+ USD)"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(26)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TEXTO
+    p.alignment = PP_ALIGN.CENTER
+
+    # Lo que obtienes
+    label1 = slide.shapes.add_textbox(Inches(1.5), Inches(2.3), Inches(7), Inches(0.4))
+    tf = label1.text_frame
+    tf.text = "Lo que obtienes:"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(24)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_ROJO
+
+    caracteristicas = [
+        "• Todos los materiales (Nylon, fibra de carbono)",
+        "• Cámara cerrada",
+        "• Velocidades súper altas (500mm/s+)",
+        "• Máxima precisión"
+    ]
+
+    y_pos = 2.8
+    for caract in caracteristicas:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.4))
+        tf = bullet.text_frame
+        tf.text = caract
+        p = tf.paragraphs[0]
+        p.font.size = Pt(22)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.5
+
+    # Ideal para
+    label2 = slide.shapes.add_textbox(Inches(1.5), Inches(5), Inches(7), Inches(0.4))
+    tf = label2.text_frame
+    tf.text = "Ideal para:"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(24)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_ROJO
+
+    ideal = [
+        "• Profesionales",
+        "• Producción"
+    ]
+
+    y_pos = 5.5
+    for item in ideal:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.4))
+        tf = bullet.text_frame
+        tf.text = item
+        p = tf.paragraphs[0]
+        p.font.size = Pt(22)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.5
+
+
+def crear_slide_recomendacion_impresora(prs):
+    """Slide 40: Recomendación"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(0.8), Inches(8), Inches(0.8))
+    tf = titulo.text_frame
+    tf.text = "🎯 Recomendación"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(48)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    # Subtítulo
+    subtitulo = slide.shapes.add_textbox(Inches(1), Inches(1.8), Inches(8), Inches(0.5))
+    tf = subtitulo.text_frame
+    tf.text = "Para tu primera impresora"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(28)
+    p.font.color.rgb = COLOR_TEXTO
+    p.alignment = PP_ALIGN.CENTER
+
+    # Recomendaciones
+    recomendaciones = [
+        "• Presupuesto mínimo: $5,500 MXN",
+        "• Busca: Nivelación automática",
+        "• Empieza con: PLA",
+        "• Investiga: YouTube reviews en español"
+    ]
+
+    y_pos = 3.0
+    for rec in recomendaciones:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.5))
+        tf = bullet.text_frame
+        tf.text = rec
+        p = tf.paragraphs[0]
+        p.font.size = Pt(26)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.8
+
+
 def crear_slide_gracias(prs):
-    """Slide 36: Gracias"""
+    """Slide 41: Gracias"""
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     crear_fondo(slide)
 
