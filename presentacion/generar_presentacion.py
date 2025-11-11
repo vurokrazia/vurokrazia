@@ -49,10 +49,13 @@ def crear_presentacion():
     # SLIDES 21-25: Conceptos Básicos FDM
     crear_slides_conceptos_fdm(prs)
 
-    # SLIDES 26-31: Los Materiales
+    # SLIDES 26-30: Los Materiales
     crear_slides_materiales(prs)
 
-    # SLIDE 32: Gracias
+    # SLIDES 31-35: Repositorios
+    crear_slides_repositorios(prs)
+
+    # SLIDE 36: Gracias
     crear_slide_gracias(prs)
 
     # Guardar presentación
@@ -918,8 +921,195 @@ def crear_slide_material_abs(prs):
     p.alignment = PP_ALIGN.CENTER
 
 
+def crear_slides_repositorios(prs):
+    """Crea los slides de Repositorios"""
+    # Slide 31: Separador Repositorios
+    crear_slide_separador_repositorios(prs)
+
+    # Slide 32: Thingiverse
+    crear_slide_thingiverse(prs)
+
+    # Slide 33: Printables
+    crear_slide_printables(prs)
+
+    # Slide 34: MyMiniFactory
+    crear_slide_mymini(prs)
+
+    # Slide 35: Puedes empezar HOY
+    crear_slide_empezar_hoy(prs)
+
+
+def crear_slide_separador_repositorios(prs):
+    """Slide 31: Separador Repositorios"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título principal
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(2.8), Inches(8), Inches(1.2))
+    tf = titulo.text_frame
+    tf.text = "🏛️ ¿Dónde Conseguir Modelos?"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(52)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+
+def crear_slide_thingiverse(prs):
+    """Slide 32: Thingiverse"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(1.5), Inches(8), Inches(0.8))
+    tf = titulo.text_frame
+    tf.text = "🟦 Thingiverse"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(48)
+    p.font.bold = True
+    p.font.color.rgb = RGBColor(59, 130, 246)  # Azul
+    p.alignment = PP_ALIGN.CENTER
+
+    # Subtítulo
+    subtitulo = slide.shapes.add_textbox(Inches(1), Inches(2.5), Inches(8), Inches(0.6))
+    tf = subtitulo.text_frame
+    tf.text = "El más grande y antiguo"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(28)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TEXTO
+    p.alignment = PP_ALIGN.CENTER
+
+    # Características
+    caracteristicas = [
+        "• Millones de modelos",
+        "• Comunidad masiva",
+        "• Todo tipo de categorías"
+    ]
+
+    y_pos = 3.8
+    for caract in caracteristicas:
+        bullet = slide.shapes.add_textbox(Inches(2.5), Inches(y_pos), Inches(5), Inches(0.5))
+        tf = bullet.text_frame
+        tf.text = caract
+        p = tf.paragraphs[0]
+        p.font.size = Pt(26)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.7
+
+
+def crear_slide_printables(prs):
+    """Slide 33: Printables"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(1.5), Inches(8), Inches(0.8))
+    tf = titulo.text_frame
+    tf.text = "🟩 Printables"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(48)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+    p.alignment = PP_ALIGN.CENTER
+
+    # Subtítulo
+    subtitulo = slide.shapes.add_textbox(Inches(1), Inches(2.5), Inches(8), Inches(0.6))
+    tf = subtitulo.text_frame
+    tf.text = "Por Prusa - Moderno y organizado"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(28)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TEXTO
+    p.alignment = PP_ALIGN.CENTER
+
+    # Características
+    caracteristicas = [
+        "• Modelos de calidad",
+        "• Sistema de puntuación",
+        "• Concursos regulares"
+    ]
+
+    y_pos = 3.8
+    for caract in caracteristicas:
+        bullet = slide.shapes.add_textbox(Inches(2.5), Inches(y_pos), Inches(5), Inches(0.5))
+        tf = bullet.text_frame
+        tf.text = caract
+        p = tf.paragraphs[0]
+        p.font.size = Pt(26)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.7
+
+
+def crear_slide_mymini(prs):
+    """Slide 34: MyMiniFactory"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(1.5), Inches(8), Inches(0.8))
+    tf = titulo.text_frame
+    tf.text = "🟧 MyMiniFactory"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(48)
+    p.font.bold = True
+    p.font.color.rgb = RGBColor(251, 146, 60)  # Naranja
+    p.alignment = PP_ALIGN.CENTER
+
+    # Subtítulo
+    subtitulo = slide.shapes.add_textbox(Inches(1), Inches(2.5), Inches(8), Inches(0.6))
+    tf = subtitulo.text_frame
+    tf.text = "Enfocado en calidad"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(28)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TEXTO
+    p.alignment = PP_ALIGN.CENTER
+
+    # Características
+    caracteristicas = [
+        "• Todos los modelos son probados",
+        "• Excelente para miniaturas"
+    ]
+
+    y_pos = 3.8
+    for caract in caracteristicas:
+        bullet = slide.shapes.add_textbox(Inches(2.5), Inches(y_pos), Inches(5), Inches(0.5))
+        tf = bullet.text_frame
+        tf.text = caract
+        p = tf.paragraphs[0]
+        p.font.size = Pt(26)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.7
+
+
+def crear_slide_empezar_hoy(prs):
+    """Slide 35: Puedes empezar HOY"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Mensaje principal
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(2.5), Inches(8), Inches(1))
+    tf = titulo.text_frame
+    tf.text = "✨ Puedes empezar a imprimir HOY"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(48)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+    p.alignment = PP_ALIGN.CENTER
+
+    # Subtítulo
+    subtitulo = slide.shapes.add_textbox(Inches(1), Inches(4), Inches(8), Inches(0.8))
+    tf = subtitulo.text_frame
+    tf.text = "Sin diseñar nada"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(32)
+    p.font.color.rgb = COLOR_TEXTO
+    p.alignment = PP_ALIGN.CENTER
+
+
 def crear_slide_gracias(prs):
-    """Slide 32: Gracias"""
+    """Slide 36: Gracias"""
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     crear_fondo(slide)
 
