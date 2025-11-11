@@ -1,0 +1,12 @@
+﻿Producto,Categoría,Notas,Precio MXN,Precio USD,Rango,Verificado
+Bambu Lab X1 Carbon,Impresora,Gama profesional,"MX$32,990.00","$1,850.00",Alta,Yes
+Impresora 3D Entrada (Genérico),Impresora,"Precio mínimo de entrada, solo PLA","MX$3,500.00",$200.00,Entrada,Yes
+Filamento PLA 1kg,Filamento,Precio de referencia GeekFactory,MX$320.00,$18.00,,Yes
+Impresora 3D Media (Genérico),Impresora,Recomendado para principiantes,"MX$5,500.00",$300.00,Entrada,Yes
+Bambu Lab A1 Mini,Impresora,Verificado en MexicoMakers,"MX$8,090.00",$450.00,Media,Yes
+Filamento ABS 1kg,Filamento,Similar a PETG en precio,MX$400.00,$22.00,,No
+Anycubic Kobra 2 Neo,Impresora,"Menos de $200 USD, recomendada principiantes",,$200.00,Entrada,Yes
+Bambu Lab P1S,Impresora,Verificado en MexicoMakers,"MX$9,790.00",$550.00,Media,Yes
+Bambu Lab A1,Impresora,Verificado en MexicoMakers,"MX$11,990.00",$670.00,Media,Yes
+Filamento PETG 1kg,Filamento,"Estimado, ligeramente más caro que PLA",MX$400.00,$22.00,,No
+Filamento TPU 1kg,Filamento,"Material especial, más caro",MX$500.00,$28.00,,No
