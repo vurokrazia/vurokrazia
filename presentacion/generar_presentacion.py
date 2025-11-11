@@ -46,10 +46,13 @@ def crear_presentacion():
     # SLIDES 5-20: Los 8 mitos (2 slides por mito)
     crear_slides_mitos(prs)
 
-    # SLIDES 21-26: Conceptos Básicos FDM
+    # SLIDES 21-25: Conceptos Básicos FDM
     crear_slides_conceptos_fdm(prs)
 
-    # SLIDE 27: Gracias
+    # SLIDES 26-31: Los Materiales
+    crear_slides_materiales(prs)
+
+    # SLIDE 32: Gracias
     crear_slide_gracias(prs)
 
     # Guardar presentación
@@ -667,8 +670,256 @@ def crear_slide_primera_capa(prs):
     p.alignment = PP_ALIGN.CENTER
 
 
+def crear_slides_materiales(prs):
+    """Crea los slides de Los Materiales"""
+    # Slide 26: Separador Los Materiales
+    crear_slide_separador_materiales(prs)
+
+    # Slide 27: PLA - El principiante
+    crear_slide_material_pla(prs)
+
+    # Slide 28: PETG - El equilibrado
+    crear_slide_material_petg(prs)
+
+    # Slide 29: TPU - El flexible
+    crear_slide_material_tpu(prs)
+
+    # Slide 30: ABS - El resistente
+    crear_slide_material_abs(prs)
+
+
+def crear_slide_separador_materiales(prs):
+    """Slide 26: Separador Los Materiales"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título principal
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(2), Inches(8), Inches(1))
+    tf = titulo.text_frame
+    tf.text = "🎨 Los Materiales"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(56)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    # Subtítulo
+    subtitulo = slide.shapes.add_textbox(Inches(1), Inches(3.5), Inches(8), Inches(0.6))
+    tf = subtitulo.text_frame
+    tf.text = "Comparativa rápida"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(28)
+    p.font.color.rgb = COLOR_TEXTO
+    p.alignment = PP_ALIGN.CENTER
+
+
+def crear_slide_material_pla(prs):
+    """Slide 27: PLA - El principiante"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(0.8), Inches(8), Inches(0.8))
+    tf = titulo.text_frame
+    tf.text = "🟢 PLA - El principiante"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+    p.alignment = PP_ALIGN.CENTER
+
+    # Ventajas
+    ventajas = [
+        "✅ MÁS FÁCIL de imprimir",
+        "✅ No huele, no tóxico",
+        "✅ Biodegradable (maíz)"
+    ]
+
+    y_pos = 2.0
+    for ventaja in ventajas:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.5))
+        tf = bullet.text_frame
+        tf.text = ventaja
+        p = tf.paragraphs[0]
+        p.font.size = Pt(24)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.6
+
+    # Desventajas
+    desventajas = [
+        "❌ Frágil ante golpes",
+        "❌ Se ablanda con calor (+60°C)"
+    ]
+
+    for desventaja in desventajas:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.5))
+        tf = bullet.text_frame
+        tf.text = desventaja
+        p = tf.paragraphs[0]
+        p.font.size = Pt(24)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.6
+
+    # Precio
+    precio = slide.shapes.add_textbox(Inches(1), Inches(6), Inches(8), Inches(0.6))
+    tf = precio.text_frame
+    tf.text = "💰 Desde $320 MXN/kg"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(28)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+    p.alignment = PP_ALIGN.CENTER
+
+
+def crear_slide_material_petg(prs):
+    """Slide 28: PETG - El equilibrado"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(0.8), Inches(8), Inches(0.8))
+    tf = titulo.text_frame
+    tf.text = "🔷 PETG - El equilibrado"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_SECUNDARIO
+    p.alignment = PP_ALIGN.CENTER
+
+    # Características
+    caracteristicas = [
+        "✅ Resistente a impactos",
+        "✅ Resistente al agua",
+        "✅ Buena resistencia térmica",
+        "⚠️ Genera hilos (stringing)"
+    ]
+
+    y_pos = 2.2
+    for caract in caracteristicas:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.5))
+        tf = bullet.text_frame
+        tf.text = caract
+        p = tf.paragraphs[0]
+        p.font.size = Pt(24)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.7
+
+    # Recomendación
+    recomendacion = slide.shapes.add_textbox(Inches(1), Inches(5.8), Inches(8), Inches(0.8))
+    tf = recomendacion.text_frame
+    tf.text = "🏆 Recomendado para piezas funcionales"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(28)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+    p.alignment = PP_ALIGN.CENTER
+
+
+def crear_slide_material_tpu(prs):
+    """Slide 29: TPU - El flexible"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(0.8), Inches(8), Inches(0.8))
+    tf = titulo.text_frame
+    tf.text = "🟣 TPU - El flexible"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    # Características
+    caracteristicas = [
+        "✅ Súper flexible (tipo goma)",
+        "✅ Absorbe impactos",
+        "✅ No se rompe",
+        "❌ Difícil de imprimir rápido"
+    ]
+
+    y_pos = 2.2
+    for caract in caracteristicas:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.5))
+        tf = bullet.text_frame
+        tf.text = caract
+        p = tf.paragraphs[0]
+        p.font.size = Pt(24)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.7
+
+    # Ideal para
+    ideal = slide.shapes.add_textbox(Inches(1), Inches(5.8), Inches(8), Inches(0.8))
+    tf = ideal.text_frame
+    tf.text = "🎯 Ideal para: llantas, sellos, fundas"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(26)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+    p.alignment = PP_ALIGN.CENTER
+
+
+def crear_slide_material_abs(prs):
+    """Slide 30: ABS - El resistente"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(0.8), Inches(8), Inches(0.8))
+    tf = titulo.text_frame
+    tf.text = "🟠 ABS - El resistente"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = RGBColor(251, 146, 60)  # Naranja
+    p.alignment = PP_ALIGN.CENTER
+
+    # Ventajas
+    ventajas = [
+        "✅ Muy resistente",
+        "✅ Soporta calor",
+        "✅ Se usa en LEGO"
+    ]
+
+    y_pos = 2.0
+    for ventaja in ventajas:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.5))
+        tf = bullet.text_frame
+        tf.text = ventaja
+        p = tf.paragraphs[0]
+        p.font.size = Pt(24)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.6
+
+    # Desventajas
+    desventajas = [
+        "❌ Difícil (warping)",
+        "❌ Huele mal",
+        "❌ Requiere ventilación"
+    ]
+
+    for desventaja in desventajas:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.5))
+        tf = bullet.text_frame
+        tf.text = desventaja
+        p = tf.paragraphs[0]
+        p.font.size = Pt(24)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.6
+
+    # Advertencia
+    advertencia = slide.shapes.add_textbox(Inches(1), Inches(6), Inches(8), Inches(0.6))
+    tf = advertencia.text_frame
+    tf.text = "⚠️ NO recomendado para principiantes"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(26)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_ROJO
+    p.alignment = PP_ALIGN.CENTER
+
+
 def crear_slide_gracias(prs):
-    """Slide 27: Gracias"""
+    """Slide 32: Gracias"""
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     crear_fondo(slide)
 
