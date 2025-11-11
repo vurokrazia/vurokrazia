@@ -58,7 +58,10 @@ def crear_presentacion():
     # SLIDES 36-40: Eligiendo Impresora
     crear_slides_eligiendo_impresora(prs)
 
-    # SLIDE 41: Gracias
+    # SLIDES 41-44: Software
+    crear_slides_software(prs)
+
+    # SLIDE 45: Gracias
     crear_slide_gracias(prs)
 
     # Guardar presentación
@@ -1415,8 +1418,196 @@ def crear_slide_recomendacion_impresora(prs):
         y_pos += 0.8
 
 
+def crear_slides_software(prs):
+    """Crea los slides de Software"""
+    # Slide 41: Separador Software
+    crear_slide_separador_software(prs)
+
+    # Slide 42: Cura
+    crear_slide_cura(prs)
+
+    # Slide 43: Flujo de Trabajo
+    crear_slide_flujo_trabajo(prs)
+
+    # Slide 44: Configuración Recomendada
+    crear_slide_config_recomendada(prs)
+
+
+def crear_slide_separador_software(prs):
+    """Slide 41: Separador Software"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título principal
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(2.8), Inches(8), Inches(1.2))
+    tf = titulo.text_frame
+    tf.text = "💻 Software Básico"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(52)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+
+def crear_slide_cura(prs):
+    """Slide 42: Cura (Ultimaker)"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(1.2), Inches(8), Inches(0.8))
+    tf = titulo.text_frame
+    tf.text = "🌐 Cura (Ultimaker)"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(48)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    # Subtítulo
+    subtitulo = slide.shapes.add_textbox(Inches(1), Inches(2.2), Inches(8), Inches(0.6))
+    tf = subtitulo.text_frame
+    tf.text = "El más popular - 100% GRATUITO"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(28)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_VERDE
+    p.alignment = PP_ALIGN.CENTER
+
+    # Características
+    caracteristicas = [
+        "✅ Interfaz intuitiva",
+        "✅ Perfiles pre-configurados",
+        "✅ Gran comunidad",
+        "✅ Windows, Mac, Linux"
+    ]
+
+    y_pos = 3.5
+    for caract in caracteristicas:
+        bullet = slide.shapes.add_textbox(Inches(2.5), Inches(y_pos), Inches(5), Inches(0.5))
+        tf = bullet.text_frame
+        tf.text = caract
+        p = tf.paragraphs[0]
+        p.font.size = Pt(26)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.7
+
+
+def crear_slide_flujo_trabajo(prs):
+    """Slide 43: Flujo de Trabajo Simple"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(0.6), Inches(8), Inches(0.7))
+    tf = titulo.text_frame
+    tf.text = "📊 Flujo de Trabajo Simple"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(42)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    # Pasos
+    pasos = [
+        ("1️⃣", "Descargar modelo (.STL)", "Thingiverse / Printables"),
+        ("2️⃣", "Abrir en Cura", "Arrastra el archivo"),
+        ("3️⃣", "Configurar", "Material, calidad, relleno"),
+        ("4️⃣", "Generar G-code", '"Slice" / "Laminar"'),
+        ("5️⃣", "Copiar a SD", "O enviar por WiFi"),
+        ("6️⃣", "¡Imprimir!", "")
+    ]
+
+    y_pos = 1.6
+    for emoji, paso, detalle in pasos:
+        # Número/Emoji
+        num = slide.shapes.add_textbox(Inches(1.5), Inches(y_pos), Inches(0.8), Inches(0.4))
+        tf = num.text_frame
+        tf.text = emoji
+        p = tf.paragraphs[0]
+        p.font.size = Pt(22)
+
+        # Paso
+        paso_box = slide.shapes.add_textbox(Inches(2.5), Inches(y_pos), Inches(3), Inches(0.4))
+        tf = paso_box.text_frame
+        tf.text = paso
+        p = tf.paragraphs[0]
+        p.font.size = Pt(20)
+        p.font.bold = True
+        p.font.color.rgb = COLOR_TEXTO
+
+        # Detalle
+        if detalle:
+            detalle_box = slide.shapes.add_textbox(Inches(5.5), Inches(y_pos), Inches(3), Inches(0.4))
+            tf = detalle_box.text_frame
+            tf.text = detalle
+            p = tf.paragraphs[0]
+            p.font.size = Pt(16)
+            p.font.color.rgb = RGBColor(156, 163, 175)  # Gris
+
+        y_pos += 0.75
+
+
+def crear_slide_config_recomendada(prs):
+    """Slide 44: Configuración Recomendada"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(0.7), Inches(8), Inches(0.7))
+    tf = titulo.text_frame
+    tf.text = "⚙️ Configuración Recomendada"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(44)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TITULO_PRINCIPAL
+    p.alignment = PP_ALIGN.CENTER
+
+    # Subtítulo
+    subtitulo = slide.shapes.add_textbox(Inches(1), Inches(1.5), Inches(8), Inches(0.5))
+    tf = subtitulo.text_frame
+    tf.text = "Para tu primera impresión"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(24)
+    p.font.color.rgb = COLOR_TEXTO
+    p.alignment = PP_ALIGN.CENTER
+
+    # Configuración (simulando código)
+    config_items = [
+        "Material: PLA",
+        "Temperatura boquilla: 200°C",
+        "Temperatura cama: 60°C",
+        "Velocidad: 50mm/s",
+        "Altura de capa: 0.2mm",
+        "Relleno: 20%",
+        "Soportes: NO (elige modelo sin voladizos)"
+    ]
+
+    # Caja de fondo para simular código
+    fondo_codigo = slide.shapes.add_shape(
+        1,  # Rectangle
+        Inches(1.5), Inches(2.3),
+        Inches(7), Inches(3.8)
+    )
+    fondo_codigo.fill.solid()
+    fondo_codigo.fill.fore_color.rgb = RGBColor(30, 41, 59)  # Azul oscuro
+    fondo_codigo.line.color.rgb = COLOR_TITULO_PRINCIPAL
+    fondo_codigo.line.width = Pt(2)
+
+    y_pos = 2.5
+    for config in config_items:
+        config_box = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.4))
+        tf = config_box.text_frame
+        tf.text = config
+        p = tf.paragraphs[0]
+        p.font.size = Pt(20)
+        p.font.name = "Courier New"
+        p.font.color.rgb = COLOR_VERDE
+        y_pos += 0.5
+
+
 def crear_slide_gracias(prs):
-    """Slide 41: Gracias"""
+    """Slide 45: Gracias"""
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     crear_fondo(slide)
 
