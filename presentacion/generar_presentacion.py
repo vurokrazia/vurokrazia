@@ -64,7 +64,10 @@ def crear_presentacion():
     # SLIDES 45-50: Primeros Pasos
     crear_slides_primeros_pasos(prs)
 
-    # SLIDE 51: Gracias
+    # SLIDES 51-58: Errores a Evitar
+    crear_slides_errores_evitar(prs)
+
+    # SLIDE 59: Gracias
     crear_slide_gracias(prs)
 
     # Guardar presentación
@@ -1913,8 +1916,238 @@ def crear_slide_paso5_paciencia(prs):
         y_pos += 0.9
 
 
+def crear_slides_errores_evitar(prs):
+    """Crea los slides de Errores a Evitar"""
+    # Slide 51: Separador
+    crear_slide_separador_errores(prs)
+
+    # Errores 1-7
+    crear_slide_error_nivelar(prs)  # 52
+    crear_slide_error_mas_barata(prs)  # 53
+    crear_slide_error_configs(prs)  # 54
+    crear_slide_error_limpiar(prs)  # 55
+    crear_slide_error_materiales_dificiles(prs)  # 56
+    crear_slide_error_sola(prs)  # 57
+    crear_slide_error_comunidad(prs)  # 58
+
+
+def crear_slide_separador_errores(prs):
+    """Slide 51: Separador Errores a Evitar"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título principal
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(2.8), Inches(8), Inches(1.2))
+    tf = titulo.text_frame
+    tf.text = "⚠️ Los 7 Errores Mortales"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(52)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_ROJO
+    p.alignment = PP_ALIGN.CENTER
+
+
+def crear_slide_error(prs, num, titulo, detalle, solucion_items):
+    """Helper para crear slide de error"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo_box = slide.shapes.add_textbox(Inches(1), Inches(0.7), Inches(8), Inches(0.8))
+    tf = titulo_box.text_frame
+    tf.text = f"🚫 Error #{num}"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(40)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_ROJO
+    p.alignment = PP_ALIGN.CENTER
+
+    # Subtítulo
+    subtitulo = slide.shapes.add_textbox(Inches(1), Inches(1.6), Inches(8), Inches(0.7))
+    tf = subtitulo.text_frame
+    tf.text = titulo
+    p = tf.paragraphs[0]
+    p.font.size = Pt(28)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TEXTO
+    p.alignment = PP_ALIGN.CENTER
+
+    # Detalle
+    if detalle:
+        detalle_box = slide.shapes.add_textbox(Inches(1.5), Inches(2.6), Inches(7), Inches(0.8))
+        tf = detalle_box.text_frame
+        tf.text = detalle
+        p = tf.paragraphs[0]
+        p.font.size = Pt(20)
+        p.font.bold = True
+        p.font.color.rgb = COLOR_ROJO
+        p.alignment = PP_ALIGN.CENTER
+
+    # Soluciones
+    y_start = 3.8 if detalle else 3.2
+    for i, solucion in enumerate(solucion_items):
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_start + i * 0.7), Inches(6), Inches(0.6))
+        tf = bullet.text_frame
+        tf.text = solucion
+        p = tf.paragraphs[0]
+        p.font.size = Pt(22)
+        p.font.color.rgb = COLOR_TEXTO
+
+
+def crear_slide_error_nivelar(prs):
+    """Slide 52: Error #1 - No nivelar"""
+    crear_slide_error(
+        prs, 1,
+        "No nivelar la cama",
+        "90% de impresiones fallidas = mala nivelación",
+        [
+            "✅ Nivela SIEMPRE antes de tu primera impresión",
+            "✅ Re-nivela cada 5-10 impresiones"
+        ]
+    )
+
+
+def crear_slide_error_mas_barata(prs):
+    """Slide 53: Error #2 - Comprar la más barata"""
+    crear_slide_error(
+        prs, 2,
+        "Comprar la más barata sin investigar",
+        "Cómo NO desperdiciar dinero:",
+        [
+            "✅ Lee al menos 3 reseñas en YouTube",
+            "✅ Verifica soporte técnico",
+            "✅ Confirma disponibilidad de refacciones",
+            "✅ Busca comunidad en español"
+        ]
+    )
+
+
+def crear_slide_error_configs(prs):
+    """Slide 54: Error #3 - Cambiar configuraciones random"""
+    crear_slide_error(
+        prs, 3,
+        "Cambiar configuraciones random",
+        "Resultado: Spaghetti de filamento",
+        [
+            "✅ Usa perfiles por defecto al inicio",
+            "✅ Cambia UN parámetro a la vez",
+            "✅ Documenta qué cambiaste"
+        ]
+    )
+
+
+def crear_slide_error_limpiar(prs):
+    """Slide 55: Error #4 - No limpiar la cama"""
+    crear_slide_error(
+        prs, 4,
+        "No limpiar la cama",
+        "Resultado: Piezas no se adhieren",
+        [
+            "✅ Limpia con alcohol isopropílico",
+            "✅ No toques la cama con los dedos",
+            "✅ Aplica pegamento si es necesario"
+        ]
+    )
+
+
+def crear_slide_error_materiales_dificiles(prs):
+    """Slide 56: Error #5 - Empezar con materiales difíciles"""
+    crear_slide_error(
+        prs, 5,
+        "Empezar con materiales difíciles",
+        "ABS en tu primera semana = frustración",
+        [
+            "✅ Empieza con PLA",
+            "✅ Domina PLA durante 1 mes",
+            "✅ Luego prueba PETG",
+            "✅ ABS solo con experiencia"
+        ]
+    )
+
+
+def crear_slide_error_sola(prs):
+    """Slide 57: Error #6 - Dejar impresión larga sola"""
+    crear_slide_error(
+        prs, 6,
+        "Dejar impresión larga sola",
+        "Riesgos: Incendios, fallas masivas",
+        [
+            "✅ Primeras impresiones: obsérvallas completas",
+            "✅ Nunca dejes la casa con impresión activa",
+            "✅ Considera cámaras de vigilancia"
+        ]
+    )
+
+
+def crear_slide_error_comunidad(prs):
+    """Slide 58: Error #7 - No unirse a la comunidad"""
+    slide = prs.slides.add_slide(prs.slide_layouts[6])
+    crear_fondo(slide)
+
+    # Título
+    titulo = slide.shapes.add_textbox(Inches(1), Inches(0.7), Inches(8), Inches(0.8))
+    tf = titulo.text_frame
+    tf.text = "🚫 Error #7"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(40)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_ROJO
+    p.alignment = PP_ALIGN.CENTER
+
+    # Subtítulo
+    subtitulo = slide.shapes.add_textbox(Inches(1), Inches(1.6), Inches(8), Inches(0.7))
+    tf = subtitulo.text_frame
+    tf.text = "No unirse a la comunidad"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(28)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_TEXTO
+    p.alignment = PP_ALIGN.CENTER
+
+    # Por qué es mala idea
+    label = slide.shapes.add_textbox(Inches(1.5), Inches(2.6), Inches(7), Inches(0.4))
+    tf = label.text_frame
+    tf.text = "Por qué es mala idea:"
+    p = tf.paragraphs[0]
+    p.font.size = Pt(22)
+    p.font.bold = True
+    p.font.color.rgb = COLOR_ROJO
+
+    razones = [
+        "• Pierdes tiempo",
+        "• Te frustras",
+        "• No aprovechas experiencia de otros"
+    ]
+    y_pos = 3.1
+    for razon in razones:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.4))
+        tf = bullet.text_frame
+        tf.text = razon
+        p = tf.paragraphs[0]
+        p.font.size = Pt(20)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.5
+
+    # Soluciones
+    soluciones = [
+        "✅ Únete a grupos de Facebook",
+        "✅ Sigue canales de YouTube",
+        "✅ Participa en r/3Dprinting",
+        "✅ Haz preguntas"
+    ]
+    y_pos = 4.8
+    for solucion in soluciones:
+        bullet = slide.shapes.add_textbox(Inches(2), Inches(y_pos), Inches(6), Inches(0.5))
+        tf = bullet.text_frame
+        tf.text = solucion
+        p = tf.paragraphs[0]
+        p.font.size = Pt(22)
+        p.font.color.rgb = COLOR_TEXTO
+        y_pos += 0.6
+
+
 def crear_slide_gracias(prs):
-    """Slide 51: Gracias"""
+    """Slide 59: Gracias"""
     slide = prs.slides.add_slide(prs.slide_layouts[6])
     crear_fondo(slide)
 
