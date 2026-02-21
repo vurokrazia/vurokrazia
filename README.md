@@ -4,15 +4,15 @@ Software Engineer based in Mexico. 11+ years writing code, currently focused on 
 
 ## What I'm working on
 
-**[STL Manager](https://github.com/vurokrazia/stl-manager-backend)** — Full-stack system for managing 3D print files. Go backend with PostgreSQL, OpenAI-powered categorization, and a React + TypeScript [frontend](https://github.com/vurokrazia/stl-manager-frontend).
-
-**[SecurePost](https://github.com/vurokrazia/securepost-api)** — Secure content platform built with TypeScript. Includes [API](https://github.com/vurokrazia/securepost-api) and [client](https://github.com/vurokrazia/securepost-client).
-
-**[Mutants](https://github.com/vurokrazia/mutants)** — Ruby gem to detect mutant DNA sequences. Published with full test suite and CI/CD.
-
-**[Auto Jumpcut](https://github.com/vurokrazia/auto-jumpcut)** — Python tool that automatically removes silence from videos using audio analysis.
-
-**[Control Platform](https://github.com/vurokrazia/control-platform)** — TypeScript management platform (in development).
+| Project | Description |
+| --- | --- |
+| [STL Manager Backend](https://github.com/vurokrazia/stl-manager-backend) | Go REST API for managing 3D print files with PostgreSQL and OpenAI-powered categorization |
+| [STL Manager Frontend](https://github.com/vurokrazia/stl-manager-frontend) | React + TypeScript frontend for browsing and organizing 3D models |
+| [SecurePost API](https://github.com/vurokrazia/securepost-api) | Secure content platform API built with TypeScript |
+| [SecurePost Client](https://github.com/vurokrazia/securepost-client) | Client application for SecurePost |
+| [Mutants](https://github.com/vurokrazia/mutants) | Ruby gem to detect mutant DNA sequences. Published with full test suite and CI/CD |
+| [Auto Jumpcut](https://github.com/vurokrazia/auto-jumpcut) | Python tool that automatically removes silence from videos using audio analysis |
+| [Control Platform](https://github.com/vurokrazia/control-platform) | TypeScript management platform (in development) |
 
 ## Tech I use daily
 
