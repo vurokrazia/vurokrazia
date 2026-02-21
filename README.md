@@ -1,6 +1,6 @@
 ### Hi there! I'm Jesus Martinez 👋
 
-Software Engineer based in Mexico with 11+ years writing code. Currently focused on **Go**, **Ruby on Rails**, and **TypeScript**. I also run a 3D printing workflow where I build tools to manage my own production pipeline.
+Software Engineer & 3D Printing Creator based in Mexico. 11+ years turning ideas into code and physical products. I build software, design 3D models, and create content about the intersection of both worlds.
 
 #### 🚀 What I'm working on
 
@@ -33,10 +33,10 @@ Software Engineer based in Mexico with 11+ years writing code. Currently focused
 <a href="https://www.linux.org" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/linux-colored.svg" width="36" height="36" alt="Linux" /></a>
 </p>
 
-#### 🌮 Fun Facts
-- 🖨️ 3D printing enthusiast — I print, design, and build tools to manage it all
-- 🐧 Linux daily driver
-- 🇲🇽 Proudly Mexican
+#### 🖨️ Beyond Code
+- 🎨 3D printing enthusiast — I design, print, and sell custom pieces
+- 🛠️ I build my own tools to automate 3D printing workflows (STL Manager, Auto Jumpcut)
+- 📹 Content creator sharing the process — from code to physical product
 
 #### 📊 GitHub Stats
 
@@ -44,7 +44,7 @@ Software Engineer based in Mexico with 11+ years writing code. Currently focused
 
 <a href="http://www.github.com/vurokrazia"><img src="https://github-readme-streak-stats.herokuapp.com/?user=vurokrazia&stroke=ffffff&background=1c1917&ring=0891b2&fire=0891b2&currStreakNum=ffffff&currStreakLabel=0891b2&sideNums=ffffff&sideLabels=ffffff&dates=ffffff&hide_border=true" /></a>
 
-#### 📫 Connect with me
-- 🐦 [X (Twitter)](https://x.com/vurokrazia)
+#### 📫 Find me on
+- 🎵 [TikTok](https://tiktok.com/@vurokrazia3d) — 10K+ followers sharing 3D printing content
 - 📸 [Instagram](https://instagram.com/vurokrazia3d)
-- 🎵 [TikTok](https://tiktok.com/@vurokrazia3d)
+- 🐦 [X (Twitter)](https://x.com/vurokrazia)
